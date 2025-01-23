@@ -23,12 +23,17 @@ Afternoon (3:00 PM): Added auth, enhanced product form, updated display.
 <strong>🛠️ Installation</strong>
 
 Clone repo: git clone https://github.com/your-username/product-manager.git
+
 Navigate: cd product-manager
+
 Start dev env: docker-compose up -d
+
 Install deps: docker-compose exec php composer install
+
 Create DB, migrate:
 
 docker-compose exec php bin/console doctrine:database:create
+
 docker-compose exec php bin/console doctrine:migrations:migrate
 
 
