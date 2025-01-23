@@ -14,13 +14,13 @@ This Symfony web app allows users to manage products. Key features:
 🔒 Authentication: Basic auth system to restrict access to authorized users.
 🖼️ Product Display: Card-based grid layout with product images.
 
-<strong>🕰️ Development Timeline
+<strong>🕰️ Development Timeline</strong>
 
 Morning (9:30 AM): Set up Git, Docker, and database.
 Noon (12:00 PM): Implemented basic product form.
 Afternoon (3:00 PM): Added auth, enhanced product form, updated display.
 
-<strong>🛠️ Installation
+<strong>🛠️ Installation</strong>
 
 Clone repo: git clone https://github.com/your-username/product-manager.git
 Navigate: cd product-manager
@@ -35,13 +35,13 @@ docker-compose exec php bin/console doctrine:migrations:migrate
 Start server: docker-compose exec php bin/console server:start
 
 App at http://localhost:8000.
-<strong>🚀 Usage
+<strong>🚀 Usage</strong>
 
 Auth: Users can register/login to access product management.
 Products: Logged-in users can create/edit/delete products.
 Display: Products shown in card grid with optional images.
 
-<strong>🤝 Contributing
+<strong>🤝 Contributing</strong>
 
 Fork repo.
 Create feature/fix branch.
