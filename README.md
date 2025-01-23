@@ -35,7 +35,8 @@ docker-compose exec php bin/console doctrine:migrations:migrate
 Start server: docker-compose exec php bin/console server:start
 
 App at http://localhost:8000.
-<br>
+
+
 <strong>🚀 Usage</strong>
 
 Auth: Users can register/login to access product management.
