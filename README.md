@@ -51,11 +51,11 @@ Display: Products shown in card grid with optional images.
 <strong>🚀 API Usage</strong>
 This API will response in JSON format
 
-GET method /api/products (Retrieve all products)
-GET method /api/products/{id} (Retrieve product by id)
-POST method /api/products (Create products)
-PUT method /api/products/{id} (Update product by id)
-DEL method /api/products/{id} (Delete product by id)
+<p>GET method /api/products (Retrieve all products)</p>
+<p>GET method /api/products/{id} (Retrieve product by id)</p>
+<p>POST method /api/products (Create products)</p>
+<p>PUT method /api/products/{id} (Update product by id)</p>
+<p>DEL method /api/products/{id} (Delete product by id)</p>
 
 <strong>🤝 Contributing</strong>
 
