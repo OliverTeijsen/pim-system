@@ -22,7 +22,7 @@ Afternoon (3:00 PM): Added auth, enhanced product form, updated display.
 
 <strong>🛠️ Installation</strong>
 
-1) Clone repo: git clone https://github.com/your-username/product-manager.git
+1) Clone repo: git clone https://github.com/OliverTeijsen/pim-system.git
 
 2) Navigate: cd product-manager
 
