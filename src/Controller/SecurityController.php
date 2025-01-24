@@ -21,7 +21,7 @@ final class SecurityController extends AbstractController
         ]);
     }
 
-    /**
+    /**docker-compose
      * @throws \Exception
      */
     #[Route('/logout', name: 'app_logout', methods: ['GET'])]
