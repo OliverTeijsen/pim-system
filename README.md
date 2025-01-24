@@ -50,6 +50,11 @@ Display: Products shown in card grid with optional images.
 
 <strong>🚀 API Usage</strong>
 This API will response in JSON format
+<p>Get token by doing /api/login_check and in the body raw data add from the database:</p>
+<p>{
+    "username": "",
+    "password": ""
+}</p>
 
 <p>GET method /api/products (Retrieve all products)</p>
 <p>GET method /api/products/{id} (Retrieve product by id)</p>

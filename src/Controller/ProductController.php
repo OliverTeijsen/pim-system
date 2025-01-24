@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class ProductController extends AbstractController
 {
@@ -29,6 +30,7 @@ class ProductController extends AbstractController
         $this->fileUploader = $fileUploader;
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/api/products', name: 'product_list', methods: ['GET'])]
     public function index(ProductRepository $productRepository): JsonResponse
     {
@@ -37,6 +39,7 @@ class ProductController extends AbstractController
         return $this->json($products);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/api/products', name: 'product_create', methods: ['POST'])]
     public function create(Request $request): JsonResponse
     {
@@ -61,12 +64,14 @@ class ProductController extends AbstractController
         return $this->json($product, Response::HTTP_CREATED);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/api/products/{id}', name: 'product_show', methods: ['GET'])]
     public function show(Product $product): JsonResponse
     {
         return $this->json($product);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/api/products/{id}', name: 'product_update', methods: ['PUT'])]
     public function update(Request $request, Product $product): JsonResponse
     {
@@ -90,6 +95,7 @@ class ProductController extends AbstractController
         return $this->json($product);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/api/products/{id}', name: 'product_delete', methods: ['DELETE'])]
     public function delete(Product $product): JsonResponse
     {
@@ -99,6 +105,7 @@ class ProductController extends AbstractController
         return $this->json(null, Response::HTTP_NO_CONTENT);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/products', name: 'product_index')]
     public function webIndex(ProductRepository $productRepository): Response
     {
@@ -107,6 +114,7 @@ class ProductController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/products/create', name: 'product_create_web')]
     public function webCreate(Request $request): Response
     {
@@ -134,6 +142,7 @@ class ProductController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/products/{id}/edit', name: 'product_edit')]
     public function webEdit(Request $request, $id): Response
     {
