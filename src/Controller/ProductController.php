@@ -15,22 +15,18 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Serializer\SerializerInterface;
 
 class ProductController extends AbstractController
 {
     private EntityManagerInterface $entityManager;
     private FileUploader $fileUploader;
-    private SerializerInterface $serializer;
 
     public function __construct(
         EntityManagerInterface $entityManager,
         FileUploader $fileUploader,
-        SerializerInterface $serializer,
     ) {
         $this->entityManager = $entityManager;
         $this->fileUploader = $fileUploader;
-        $this->serializer = $serializer;
     }
 
     #[Route('/api/products', name: 'product_list', methods: ['GET'])]
