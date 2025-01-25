@@ -7,9 +7,6 @@
         <script src="https://cdn.tailwindcss.com"></script>
         {% block stylesheets %}
         {% endblock %}
-
-        {% block javascripts %}
-        {% endblock %}
     </head>
     <body>
 
@@ -24,7 +21,8 @@
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <a href="{{ path('product_index') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Products</a>
-                                <a href="{{ path('product_create') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
+                                <a href="{{ path('product_create_web') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
+                                <a href="{{ path('admin_users') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Users</a>
                             </div>
                         {% endif %}
                     </div>
@@ -40,7 +38,11 @@
     </nav>
 
     <main>
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
     </main>
+    {% block javascripts %}
+        {% block custom_javascripts %}{% endblock %}
+    {% endblock %}
     </body>
 </html>

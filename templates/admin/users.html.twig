@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">User Management</h1>
+
+        <a href="{{ path('admin_create_user') }}" class="bg-green-500 text-white px-4 py-2 rounded">Create Admin</a>
+
+        <table class="mt-4 w-full">
+            <thead>
+            <tr>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.roles|join(', ') }}</td>
+                    <td>
+                        <a href="{{ path('admin_reset_password', {id: user.id}) }}" class="text-blue-500">Reset Password</a>
+                        <a href="{{ path('admin_delete_user', {id: user.id}) }}" class="text-red-500 ml-2">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

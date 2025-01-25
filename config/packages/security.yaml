@@ -8,6 +8,9 @@ security:
         App\Entity\User:
             algorithm: auto
     firewalls:
+#        session:
+#            handler_id: null
+#            cookie_secure: auto
         login:
             pattern: ^/api/login
             stateless: true
@@ -25,10 +28,23 @@ security:
             form_login:
                 login_path: app_login
                 check_path: app_login
+                enable_csrf: true
+                csrf_token_id: authenticate
+                always_use_default_target_path: true
+                default_target_path: /admin/users
             logout:
                 path: app_logout
+                target: /login
+                csrf_parameter: null
+
+    role_hierarchy:
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN]
+        ROLE_ADMIN: []
 
     access_control:
         - { path: ^/login, roles: PUBLIC_ACCESS }
-        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/logout, roles: PUBLIC_ACCESS }
+        - { path: ^/admin, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/api/admin, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/api, roles: ROLE_ADMIN }
         - { path: ^/, roles: ROLE_ADMIN }
